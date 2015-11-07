@@ -1,12 +1,3 @@
-[![](https://badge.imagelayers.io/beevelop/cordova:latest.svg)](https://imagelayers.io/?images=beevelop/cordova:latest 'Get your own badge on imagelayers.io')
-
-# Cordova based on [beevelop/android-nodejs](https://github.com/beevelop/docker-android-nodejs)
-- Cordova 5.4.0
-
-## Disclaimer
-> This is experimental and might break from time to time. Use at your own risk!
-
-
 [![Travis](https://img.shields.io/travis/beevelop/docker-cordova.svg?style=flat-square)](https://travis-ci.org/beevelop/docker-cordova)
 [![Docker Pulls](https://img.shields.io/docker/pulls/beevelop/cordova.svg?style=flat-square)](https://links.beevelop.com/d-cordova)
 [![ImageLayer](https://badge.imagelayers.io/beevelop/cordova:latest.svg)](https://imagelayers.io/?images=beevelop/cordova:latest)
