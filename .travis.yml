@@ -1,0 +1,8 @@
+sudo: required
+
+services:
+  - docker
+
+script:
+  - docker build -t beevelop/cordova .
+  - docker run beevelop/cordova /bin/sh -c "cordova create test && cd test && cordova platform add android && cordova build android"
