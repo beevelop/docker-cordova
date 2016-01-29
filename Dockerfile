@@ -2,7 +2,7 @@ FROM beevelop/android-nodejs
 MAINTAINER Maik Hummel <m@ikhummel.com>
 
 # Build-Variables
-ENV CORDOVA_VERSION 5.4.1
+ENV CORDOVA_VERSION 6.0.0
 
 WORKDIR "/tmp"
 
