@@ -3,7 +3,7 @@
 [![ImageLayer](https://badge.imagelayers.io/beevelop/cordova:latest.svg)](https://imagelayers.io/?images=beevelop/cordova:latest)
 [![Beevelop](https://links.beevelop.com/honey-badge)](https://beevelop.com)
 
-# Cordova 5.4.1
+# Latest Cordova
 ### based on [beevelop/android-nodejs](https://github.com/beevelop/docker-android-nodejs)
 ----
 ### Pull from Docker Hub
