@@ -1,7 +1,7 @@
 FROM beevelop/android-nodejs
 MAINTAINER Maik Hummel <m@ikhummel.com>
 
-ENV CORDOVA_VERSION 6.5.0
+ENV CORDOVA_VERSION 7.0.0
 
 WORKDIR "/tmp"
 
