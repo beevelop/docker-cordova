@@ -5,4 +5,4 @@ services:
 
 script:
   - docker build -t beevelop/cordova .
-  - docker run beevelop/cordova /bin/sh -c "cordova create test && cd test && cordova platform add android && cordova build android"
+  - docker run beevelop/cordova /bin/sh -c "echo y | /opt/android/tools/bin/sdkmanager 'extras;m2repository;com;android;support;constraint;constraint-layout-solver;1.0.2' && cordova create test && cd test && cordova platform add android && cordova build android"
