@@ -2,7 +2,7 @@ FROM beevelop/android-nodejs
 
 MAINTAINER Maik Hummel <m@ikhummel.com>
 
-ENV CORDOVA_VERSION 8.0.0
+ENV CORDOVA_VERSION 8.1.0
 
 WORKDIR "/tmp"
 
