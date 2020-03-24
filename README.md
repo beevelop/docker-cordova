@@ -6,7 +6,7 @@
 ![Badges](https://shields.beevelop.com/badge/badges-7-brightgreen.svg?style=flat-square)
 [![Beevelop](https://links.beevelop.com/honey-badge)](https://beevelop.com)
 
-# Latest Cordova
+# Cordova 9
 ### based on [beevelop/android-nodejs](https://github.com/beevelop/docker-android-nodejs)
 ----
 ### Pull from Docker Hub
