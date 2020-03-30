@@ -5,4 +5,4 @@ services:
 
 script:
   - docker build -t bee .
-  - docker run bee /bin/sh -c "cordova create test && cd test && cordova platform add android && cordova build android"
+  - docker run bee /bin/sh -c "cordova telemetry on && cordova create test && cd test && cordova platform add android && cordova build android"
