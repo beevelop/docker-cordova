@@ -5,4 +5,4 @@ services:
 
 script:
   - docker build -t cordi .
-  - docker run cordi /bin/sh -c "cordova create test && cd test && cordova platform add android && cordova build android"
+  - docker run cordi /bin/sh -c "cordova telemetry on && cordova create test && cd test && cordova platform add android && cordova build android"
