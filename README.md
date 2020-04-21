@@ -16,7 +16,7 @@ docker pull beevelop/cordova:latest
 
 ### Or build from GitHub
 ```
-docker build -t beevelop/cordova github.com/beevelop/docker-java
+docker build -t beevelop/cordova github.com/beevelop/docker-cordova
 ```
 
 ### Run image
