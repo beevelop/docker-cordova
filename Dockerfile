@@ -1,6 +1,6 @@
 FROM beevelop/android-nodejs
 
-ENV CORDOVA_VERSION 10.0.0
+ENV CORDOVA_VERSION 11.0.0
 
 WORKDIR "/tmp"
 
