@@ -16,23 +16,23 @@
 
 ### Pull from Docker Hub
 
-```
+```bash
 docker pull beevelop/cordova:latest
 ```
 
 ### Or build from GitHub
 
-```
+```bash
 docker build -t beevelop/cordova github.com/beevelop/docker-cordova
 ```
 
 ### Run image
 
-```
+```bash
 docker run -it beevelop/cordova bash
 ```
 
-### Or use as base image
+### Or use it as a base image
 
 ```Dockerfile
 FROM beevelop/cordova:latest
