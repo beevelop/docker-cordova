@@ -38,6 +38,14 @@ docker run -it beevelop/cordova bash
 FROM beevelop/cordova:latest
 ```
 
+## Releases
+
+Releases follow [CalVer (Calendar Versioning)](https://calver.org/) and use `YYYY.MM.MICRO` syntax. The following command helps with tagging a new release:
+
+```bash
+git tag "v$(date +"%Y").$(date +"%m").$(($(git tag -l "v$(date +"%Y").*" | wc -l)+1))"
+```
+
 ---
 
 ![One does not simply use latest](https://i.imgflip.com/1fgwxr.jpg)
