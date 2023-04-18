@@ -43,7 +43,7 @@ FROM beevelop/cordova:latest
 Releases follow [CalVer (Calendar Versioning)](https://calver.org/) and use `YYYY.MM.MICRO` syntax. The following command helps with tagging a new release:
 
 ```bash
-git tag "v$(date +"%Y").$(date +"%m").$(($(git tag -l "v$(date +"%Y").*" | wc -l)+1))"
+git tag "v$(date +"%Y").$(date +"%m").$(($(git tag -l "v$(date +"%Y").$(date +"%m").*" | wc -l)+1))"
 ```
 
 ---
