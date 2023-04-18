@@ -37,13 +37,13 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-      - name: Buildx cache
-        uses: actions/cache@v3
-        with:
-          path: ${{ github.workspace }}/cache
-          key: ${{ runner.os }}-docker-${{ hashfiles('cache/**') }}
-          restore-keys: |
-            ${{ runner.os }}-docker
+      # - name: Buildx cache
+      #   uses: actions/cache@v3
+      #   with:
+      #     path: ${{ github.workspace }}/cache
+      #     key: ${{ runner.os }}-docker-${{ hashfiles('cache/**') }}
+      #     restore-keys: |
+      #       ${{ runner.os }}-docker
       - name: Build and push
         id: docker_build
         uses: docker/build-push-action@v4
@@ -52,8 +52,8 @@ jobs:
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.docker_meta.outputs.tags }}
           labels: ${{ steps.docker_meta.outputs.labels }}
-          cache-from: type=local,src=${{ github.workspace }}/cache
-          cache-to: type=local,dest=${{ github.workspace }}/cache
+          # cache-from: type=local,src=${{ github.workspace }}/cache
+          # cache-to: type=local,dest=${{ github.workspace }}/cache
       # temporarily disabled until https://github.com/aquasecurity/trivy-action/issues/22 is resolved
       # - name: Run Trivy vulnerability scanner
       #   uses: aquasecurity/trivy-action@master
