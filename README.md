@@ -36,6 +36,12 @@ docker run -it beevelop/cordova bash
 
 ```Dockerfile
 FROM beevelop/cordova:latest
+
+# e.g. you can add a non-root user to run the container
+RUN addgroup --gid 1001 bee && \
+    adduser --uid 1001 --ingroup bee --home /home/bee --shell /bin/sh --disabled-password bee
+USER bee
+WORKDIR /home/bee
 ```
 
 ## Releases
