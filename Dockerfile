@@ -1,7 +1,7 @@
 FROM beevelop/android-nodejs
 
 ENV CORDOVA_VERSION=12.0.0 \
-    CORDOVA_BUILD_TOOLS_VERSION=32.0.0 \
+    CORDOVA_BUILD_TOOLS_VERSION=33.0.2 \
     ANDROID_HOME=/opt/android
 
 WORKDIR "/tmp"
