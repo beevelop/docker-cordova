@@ -8,7 +8,7 @@
 ![CalVer](https://img.shields.io/badge/CalVer-YYYY.MM.MICRO-22bfda.svg?style=for-the-badge)
 [![Beevelop](https://img.shields.io/badge/-%20Made%20with%20%F0%9F%8D%AF%20by%20%F0%9F%90%9Dvelop-blue.svg?style=for-the-badge)](https://beevelop.com)
 
-# Cordova 11
+# Cordova 12
 
 ### based on [beevelop/android-nodejs](https://github.com/beevelop/docker-android-nodejs)
 
