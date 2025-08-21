@@ -17,6 +17,9 @@ RUN while true; do echo 'y'; sleep 2; done | sdkmanager "build-tools;${CORDOVA_B
     cordova platform add android --save && \
     cordova requirements android && \
     cordova build android --verbose && \
+    npm install -g graceful-fs@4.2.11 && \
+    cp -r /usr/lib/node_modules/graceful-fs/* /usr/lib/node_modules/npm/node_modules/graceful-fs/ && \
+    cd /tmp && \
     rm -rf /tmp/myApp && \
     rm -rf /opt/android/licenses && \
     npm cache clean --force && \
