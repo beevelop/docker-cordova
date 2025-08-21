@@ -10,6 +10,17 @@
 
 # Cordova 13
 
+- Node.js: v22.18.0
+- npm: 10.9.3
+- Yarn: 1.22.22
+- Cordova: 12.0.0 (cordova-lib@12.0.2)
+- Maven: 3.8.7
+- Java: 17.0.16 (OpenJDK)
+- Gradle: 8.12
+- Kotlin: 2.0.21
+- Groovy: 3.0.22
+- Ant: 1.10.15
+
 ### based on [beevelop/android-nodejs](https://github.com/beevelop/docker-android-nodejs)
 
 ---
