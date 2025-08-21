@@ -25,28 +25,23 @@
 
 ---
 
-### Pull from Docker Hub
+### Pull, build or run this image
 
 ```bash
-docker pull beevelop/cordova:latest
-```
+# pull the most recent tag / release
+docker pull beevelop/cordova:v2025.08.1
 
-### Or build from GitHub
+# or run the image interactively
+docker run --rm --name beevelop -it beevelop/cordova:v2025.08.1 bash
 
-```bash
+# or build the image from GitHub
 docker build -t beevelop/cordova github.com/beevelop/docker-cordova
 ```
 
-### Run image
-
-```bash
-docker run -it beevelop/cordova bash
-```
-
-### Or use it as a base image
+### Or use as base image
 
 ```Dockerfile
-FROM beevelop/cordova:latest
+FROM beevelop/cordova:v2025.08.1
 
 # e.g. you can add a non-root user to run the container
 RUN addgroup --gid 1001 bee && \
@@ -64,5 +59,21 @@ echo git tag "v$(date +"%Y.%m").$(($(git tag -l "v$(date +"%Y.%m").*" | wc -l)+1
 ```
 
 ---
+
+# All Docker images
+
+| Badge | Pulls | Build Status | Release Date | Release |
+| --- | --- | --- | --- | --- |
+| [![base](https://img.shields.io/badge/beevelop%2Fbase-grey?style=flat-square&logo=github)](https://github.com/beevelop/docker-base) | ![Docker Pulls](https://img.shields.io/docker/pulls/beevelop/base.svg?style=flat-square) | ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/beevelop/docker-base/docker.yml?style=flat-square) | ![GitHub Release Date](https://img.shields.io/github/release-date/beevelop/docker-base?style=flat-square) | ![GitHub release](https://img.shields.io/github/release/beevelop/docker-base.svg?style=flat-square) |
+| [![java](https://img.shields.io/badge/beevelop%2Fjava-grey?style=flat-square&logo=github)](https://github.com/beevelop/docker-java) | ![Docker Pulls](https://img.shields.io/docker/pulls/beevelop/java.svg?style=flat-square) | ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/beevelop/docker-java/docker.yml?style=flat-square) | ![GitHub Release Date](https://img.shields.io/github/release-date/beevelop/docker-java?style=flat-square) | ![GitHub release](https://img.shields.io/github/release/beevelop/docker-java.svg?style=flat-square) |
+| [![android](https://img.shields.io/badge/beevelop%2Fandroid-grey?style=flat-square&logo=github)](https://github.com/beevelop/docker-android) | ![Docker Pulls](https://img.shields.io/docker/pulls/beevelop/android.svg?style=flat-square) | ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/beevelop/docker-android/docker.yml?style=flat-square) | ![GitHub Release Date](https://img.shields.io/github/release-date/beevelop/docker-android?style=flat-square) | ![GitHub release](https://img.shields.io/github/release/beevelop/docker-android.svg?style=flat-square) |
+| [![android-nodejs](https://img.shields.io/badge/beevelop%2Fandroid_nodejs-grey?style=flat-square&logo=github)](https://github.com/beevelop/docker-android-nodejs) | ![Docker Pulls](https://img.shields.io/docker/pulls/beevelop/android-nodejs.svg?style=flat-square) | ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/beevelop/docker-android-nodejs/docker.yml?style=flat-square) | ![GitHub Release Date](https://img.shields.io/github/release-date/beevelop/docker-android-nodejs?style=flat-square) | ![GitHub release](https://img.shields.io/github/release/beevelop/docker-android-nodejs.svg?style=flat-square) |
+| [![cordova](https://img.shields.io/badge/beevelop%2Fcordova-grey?style=flat-square&logo=github)](https://github.com/beevelop/docker-cordova) | ![Docker Pulls](https://img.shields.io/docker/pulls/beevelop/cordova.svg?style=flat-square) | ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/beevelop/docker-cordova/docker.yml?style=flat-square) | ![GitHub Release Date](https://img.shields.io/github/release-date/beevelop/docker-cordova?style=flat-square) | ![GitHub release](https://img.shields.io/github/release/beevelop/docker-cordova.svg?style=flat-square) |
+| [![ionic](https://img.shields.io/badge/beevelop%2Fionic-grey?style=flat-square&logo=github)](https://github.com/beevelop/docker-ionic) | ![Docker Pulls](https://img.shields.io/docker/pulls/beevelop/ionic.svg?style=flat-square) | ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/beevelop/docker-ionic/docker.yml?style=flat-square) | ![GitHub Release Date](https://img.shields.io/github/release-date/beevelop/docker-ionic?style=flat-square) | ![GitHub release](https://img.shields.io/github/release/beevelop/docker-ionic.svg?style=flat-square) |
+| [![nginx-basic-auth](https://img.shields.io/badge/beevelop%2Fnginx_basic_auth-grey?style=flat-square&logo=github)](https://github.com/beevelop/docker-nginx-basic-auth) | ![Docker Pulls](https://img.shields.io/docker/pulls/beevelop/nginx-basic-auth.svg?style=flat-square) | ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/beevelop/docker-nginx-basic-auth/docker.yml?style=flat-square) | ![GitHub Release Date](https://img.shields.io/github/release-date/beevelop/docker-nginx-basic-auth?style=flat-square) | ![GitHub release](https://img.shields.io/github/release/beevelop/docker-nginx-basic-auth.svg?style=flat-square) |
+
+---
+
+### Use tags where possible, because
 
 ![One does not simply use latest](https://i.imgflip.com/1fgwxr.jpg)
