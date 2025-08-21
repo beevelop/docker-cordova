@@ -13,12 +13,18 @@ RUN while true; do echo 'y'; sleep 2; done | sdkmanager "build-tools;${CORDOVA_B
     cd /tmp && \
     cordova create myApp com.myCompany.myApp myApp && \
     cd myApp && \
+    echo '{"overrides":{"graceful-fs":"^4.2.11"},"devDependencies":{"npm-force-resolutions":"^0.0.10"},"scripts":{"preinstall":"npx npm-force-resolutions"}}' > package.json.override && \
+    npm pkg set overrides.graceful-fs="^4.2.11" && \
+    npm install npm-force-resolutions --no-save && \
+    npx npm-force-resolutions && \
     cordova plugin add cordova-plugin-camera --save && \
     cordova platform add android --save && \
     cordova requirements android && \
     cordova build android --verbose && \
+    cd /tmp && \
     rm -rf /tmp/myApp && \
     rm -rf /opt/android/licenses && \
+    cd /opt && \
     npm cache clean --force && \
     node -v && npm -v && yarn -v && cordova -v && \
     mvn -v && gradle -v && java -version && ant -version
