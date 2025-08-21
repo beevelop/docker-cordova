@@ -12,11 +12,11 @@ env:
 
 jobs:
   main:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
       - name: Check out the repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Set imageName based on the repository name
         id: step_one
         run: |
@@ -25,15 +25,15 @@ jobs:
             echo "imageName=$imageName" >> $GITHUB_ENV
       - name: Docker meta
         id: docker_meta
-        uses: docker/metadata-action@v4
+        uses: docker/metadata-action@v5
         with:
           images: ${{ env.imageName }}
       - name: Set up QEMU
-        uses: docker/setup-qemu-action@v2
+        uses: docker/setup-qemu-action@v3
       - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2
-      - name: Login to Harbor
-        uses: docker/login-action@v2
+        uses: docker/setup-buildx-action@v3
+      - name: Login to DockerHub
+        uses: docker/login-action@v3
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
@@ -46,23 +46,9 @@ jobs:
       #       ${{ runner.os }}-docker
       - name: Build and push
         id: docker_build
-        uses: docker/build-push-action@v4
+        uses: docker/build-push-action@v5
         with:
           platforms: ${{ env.platforms }}
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.docker_meta.outputs.tags }}
           labels: ${{ steps.docker_meta.outputs.labels }}
-          # cache-from: type=local,src=${{ github.workspace }}/cache
-          # cache-to: type=local,dest=${{ github.workspace }}/cache
-      # temporarily disabled until https://github.com/aquasecurity/trivy-action/issues/22 is resolved
-      # - name: Run Trivy vulnerability scanner
-      #   uses: aquasecurity/trivy-action@master
-      #   with:
-      #     image-ref: ${{ env.imageName }}:${{ steps.docker_meta.outputs.version }}
-      #     format: "template"
-      #     template: "@/contrib/sarif.tpl"
-      #     output: "trivy-results.sarif"
-      # - name: Upload Trivy scan results to GitHub Security tab
-      #   uses: github/codeql-action/upload-sarif@v1
-      #   with:
-      #     sarif_file: "trivy-results.sarif"
