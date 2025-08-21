@@ -1,6 +1,6 @@
 FROM beevelop/android-nodejs
 
-ENV CORDOVA_VERSION=13.0.0 \
+ENV CORDOVA_VERSION=12.0.0 \
     CORDOVA_BUILD_TOOLS_VERSION=34.0.0 \
     ANDROID_HOME=/opt/android
 
