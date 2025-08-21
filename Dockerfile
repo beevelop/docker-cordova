@@ -19,4 +19,6 @@ RUN while true; do echo 'y'; sleep 2; done | sdkmanager "build-tools;${CORDOVA_B
     cordova build android --verbose && \
     rm -rf /tmp/myApp && \
     rm -rf /opt/android/licenses && \
-    npm cache clean --force
+    npm cache clean --force && \
+    node -v && npm -v && yarn -v && cordova -v && \
+    mvn -v && gradle -v && java -version && ant -version
