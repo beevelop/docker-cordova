@@ -29,10 +29,10 @@
 
 ```bash
 # pull the most recent tag / release
-docker pull beevelop/cordova:v2025.08.2
+docker pull beevelop/cordova:v2025.08.3
 
 # or run the image interactively
-docker run --rm --name beevelop -it beevelop/cordova:v2025.08.2 bash
+docker run --rm --name beevelop -it beevelop/cordova:v2025.08.3 bash
 
 # or build the image from GitHub
 docker build -t beevelop/cordova github.com/beevelop/docker-cordova
@@ -41,7 +41,7 @@ docker build -t beevelop/cordova github.com/beevelop/docker-cordova
 ### Or use as base image
 
 ```Dockerfile
-FROM beevelop/cordova:v2025.08.2
+FROM beevelop/cordova:v2025.08.3
 
 # e.g. you can add a non-root user to run the container
 RUN addgroup --gid 1001 bee && \
