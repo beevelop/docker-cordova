@@ -8,7 +8,13 @@
 ![CalVer](https://img.shields.io/badge/CalVer-YYYY.MM.MICRO-22bfda.svg?style=for-the-badge)
 [![Beevelop](https://img.shields.io/badge/-%20Made%20with%20%F0%9F%8D%AF%20by%20%F0%9F%90%9Dvelop-blue.svg?style=for-the-badge)](https://beevelop.com)
 
-# Cordova 13
+# Docker Apache Cordova - Cross-Platform Mobile Development
+
+> Complete Apache Cordova development environment with Android SDK, Node.js, and build tools for creating hybrid mobile applications.
+
+## What's Included
+
+**Based on [beevelop/android-nodejs](https://github.com/beevelop/docker-android-nodejs)**
 
 - Node.js: v22.18.0
 - npm: 11.5.2
@@ -21,41 +27,31 @@
 - Groovy: 3.0.22
 - Ant: 1.10.14
 
-### based on [beevelop/android-nodejs](https://github.com/beevelop/docker-android-nodejs)
+## Usage
 
----
-
-### Pull, build or run this image
+### Pull and Run
 
 ```bash
-# pull the most recent tag / release
+# Pull the latest release
 docker pull beevelop/cordova:v2025.08.3
 
-# or run the image interactively
-docker run --rm --name beevelop -it beevelop/cordova:v2025.08.3 bash
+# Run interactively
+docker run --rm -it beevelop/cordova:v2025.08.3 bash
 
-# or build the image from GitHub
+# Build from source
 docker build -t beevelop/cordova github.com/beevelop/docker-cordova
 ```
 
-### Or use as base image
+### Use as Base Image
 
 ```Dockerfile
 FROM beevelop/cordova:v2025.08.3
 
-# e.g. you can add a non-root user to run the container
+# Example: Add non-root user
 RUN addgroup --gid 1001 bee && \
     adduser --uid 1001 --ingroup bee --home /home/bee --shell /bin/sh --disabled-password bee
 USER bee
 WORKDIR /home/bee
-```
-
-## Releases
-
-Releases follow [CalVer (Calendar Versioning)](https://calver.org/) and use `YYYY.MM.MICRO` syntax. The following command helps with tagging a new release:
-
-```bash
-echo git tag "v$(date +"%Y.%m").$(($(git tag -l "v$(date +"%Y.%m").*" | wc -l)+1))"
 ```
 
 ---
@@ -73,6 +69,8 @@ echo git tag "v$(date +"%Y.%m").$(($(git tag -l "v$(date +"%Y.%m").*" | wc -l)+1
 | [![nginx-basic-auth](https://img.shields.io/badge/beevelop%2Fnginx_basic_auth-grey?style=flat-square&logo=github)](https://github.com/beevelop/docker-nginx-basic-auth) | ![Docker Pulls](https://img.shields.io/docker/pulls/beevelop/nginx-basic-auth.svg?style=flat-square) | ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/beevelop/docker-nginx-basic-auth/docker.yml?style=flat-square) | ![GitHub Release Date](https://img.shields.io/github/release-date/beevelop/docker-nginx-basic-auth?style=flat-square) | ![GitHub release](https://img.shields.io/github/release/beevelop/docker-nginx-basic-auth.svg?style=flat-square) |
 
 ---
+
+![Beevelop's Docker Image Hierarchy](https://gist.githubusercontent.com/beevelop/b0cddab7209a683c77560d06ff00bc8e/raw/15429ee1d02e2c4dc019b760ca8c7ceff5911b82/hierarchy.png)
 
 ### Use tags where possible, because
 
