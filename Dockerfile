@@ -2,12 +2,13 @@ FROM beevelop/android-nodejs
 
 ENV CORDOVA_VERSION=12.0.0 \
     CORDOVA_BUILD_TOOLS_VERSION=34.0.0 \
+    ANDROID_PLATFORM_VERSION=android-36 \
     ANDROID_HOME=/opt/android
 
 WORKDIR "/tmp"
 
 # Install build tools and Cordova, then test build to verify setup
-RUN while true; do echo 'y'; sleep 2; done | sdkmanager "build-tools;${CORDOVA_BUILD_TOOLS_VERSION}" && \
+RUN while true; do echo 'y'; sleep 2; done | sdkmanager "build-tools;${CORDOVA_BUILD_TOOLS_VERSION}" "platforms;${ANDROID_PLATFORM_VERSION}" && \
     npm i -g --unsafe-perm cordova@${CORDOVA_VERSION} && \
     cordova -v && \
     cd /tmp && \
