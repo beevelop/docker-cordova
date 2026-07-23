@@ -9,7 +9,7 @@ WORKDIR "/tmp"
 
 # Install build tools and Cordova, then test build to verify setup
 RUN while true; do echo 'y'; sleep 2; done | sdkmanager "build-tools;${CORDOVA_BUILD_TOOLS_VERSION}" "platforms;${ANDROID_PLATFORM_VERSION}" && \
-    npm i -g --unsafe-perm cordova@${CORDOVA_VERSION} && \
+    npm i -g cordova@${CORDOVA_VERSION} && \
     cordova -v && \
     cd /tmp && \
     cordova create myApp com.myCompany.myApp myApp && \
