@@ -42,6 +42,9 @@ docker run --rm -it beevelop/cordova:v2025.08.3 bash
 docker build -t beevelop/cordova github.com/beevelop/docker-cordova
 ```
 
+Pull requests build the Docker image without logging in to Docker Hub or pushing.
+Pushes to `latest`, version tags (`v*.*.*`), and scheduled runs build and publish the image.
+
 ### Use as Base Image
 
 ```Dockerfile
